@@ -31,6 +31,9 @@ BuildRequires:  umockdev >= 0.13.2
 # Compatibility requirement
 Requires:       fprintd-pam >= 1.94
 
+# Conflict with standard libfprint package
+Conflicts:      libfprint
+
 %description
 Library for fingerprint readers with patches 
 for the support of the ELAN 0C4C and 0C00.
@@ -49,7 +52,7 @@ header files for developing applications that use %{name}.
 %build
 # Include the virtual image driver for integration tests
 %meson -Ddrivers=all
-%meson_build	
+%meson_build
 
 %install
 %meson_install
