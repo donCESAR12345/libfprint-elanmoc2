@@ -58,6 +58,9 @@ header files for developing applications that use %{name}.
 %meson_install
 %ldconfig_scriptlets
 
+%post -p /usr/bin/ldconfig
+%postun -p /usr/bin/ldconfig
+
 %files
 %license COPYING
 %doc NEWS THANKS AUTHORS README.md
